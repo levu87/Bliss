@@ -1,0 +1,68 @@
+.clearfix:after
+	clear: both
+	content: ""
+	display: block
+.hidden-mobile
+    @media (max-width: 1024px)
+        display: none
+.hidden-desktop 
+    @media (min-width: 1025px)
+        display: block
+.main-title 
+    font-size: 4rem
+    color: rgb(156, 191, 177)
+    font-weight: 600
+    line-height: 1.2
+    text-transform: uppercase
+    text-align: center
+    position: relative
+    padding-top: 5rem
+    margin-bottom: 5rem
+    &:before 
+        position: absolute 
+        content: ''
+        top: 0
+        left: 50% 
+        transform: translateX(-50%)
+        width: 36rem 
+        height: 2px
+        background: rgb(156, 191, 177)
+.main-btn
+    display: inline-block 
+    padding: 1.5rem 8.5rem
+    font-size: 1.8rem
+    color: #ffffff
+    background: #9cbfb1
+    &:hover 
+        color: #ffffff
+.m-0
+    margin: 0 
+.p-0
+    padding: 0
+.swiper-nav
+    position: absolute 
+    top: 50% 
+    transform: translate(-50%,-50%)
+    z-index:
+    left: 50%
+    display: flex 
+    width: 100%
+    z-index: 9
+    .button-next 
+        margin-left: auto
+        // transform: translateX(6rem)
+    .button-prev 
+        // transform: translateX(-6rem)
+    .button-next,.button-prev 
+        width: 3.5rem 
+        height: 3.5rem 
+        display: flex 
+        justify-content: center 
+        align-items: center 
+        color: #ffffff
+        font-size: 1.8rem
+        outline: none
+        border-radius: 50%
+        border: 1px solid #ffffff
+.main-section 
+    padding: 6rem 0
