@@ -1,0 +1,169 @@
+.blog__nav 
+    position: relative
+    &:after
+        position: absolute 
+        content: ''
+        bottom: 0
+        left: 50% 
+        transform: translateX(-50%)
+        width: 36rem 
+        height: 2px
+        background: rgb(156, 191, 177)
+    &:before 
+        position: absolute 
+        content: ''
+        top: 0
+        left: 50% 
+        transform: translateX(-50%)
+        width: 36rem 
+        height: 2px
+        background: rgb(156, 191, 177)
+    &-list 
+        list-style: none 
+        padding: 1.5rem 0
+        li 
+            display: inline-block
+            &:not(:last-child)
+                margin-right: 7rem
+            &:hover,&.active 
+                a
+                    text-shadow: 0 0 0.65px #9cbfb1, 0 0 0.65px #9cbfb1
+                    text-decoration: underline
+            a 
+                padding: 1.5rem 0
+                font-size: 1.5rem 
+                color: #9cbfb1
+                text-transform: uppercase
+.blog-detail
+    padding: 4rem 0
+    .head 
+        text-align: center 
+        margin-bottom: 2.5rem
+        .title 
+            font-size: 4rem
+            color: $main-color 
+            margin-bottom: 2.5rem
+        date 
+            font-size: 1.4rem
+            color: #666666 
+            em 
+                margin-right: .5rem
+                
+    .fullcontent 
+        margin: 0 8.33% 
+        border-top: 1px solid $main-color
+        padding-top: 4rem 
+        @media (max-width: 767px)
+            margin: 0
+        p 
+            font-size: 1.6rem
+            color: #333333 
+            line-height: 1.4
+            text-align: center
+            padding-bottom: 3.6rem
+        .img 
+            display: block 
+            padding-bottom: 3.6rem
+            width: 100%
+            img 
+                width: 100%
+        .list-image
+            display: grid
+            grid-gap: 3rem
+            grid-template-columns: 1fr 1fr
+            grid-auto-rows: 30rem 32rem 30rem
+            grid-auto-flow: dense
+            margin-bottom: 3.6rem
+            .box-img 
+                display: block 
+                img 
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                &:nth-child(1)
+                    grid-column: 1 / 2
+                    grid-row: 1 / 2
+                &:nth-child(2)
+                    grid-column: 2 / 3
+                    grid-row: 1 / 3
+                &:nth-child(3)
+                    grid-column: 1 / 2
+                    grid-row: 2 / 4
+                &:nth-child(4)
+                    grid-column: 2 / 3
+                    grid-row: 3 / 4
+.blog-other 
+    &__inner
+        position: relative
+        margin-bottom: 4rem
+        &:after 
+            content: ' '
+            background: $bg-color
+            width: 100% 
+            height: 15rem 
+            top: 50%
+            position: absolute
+            transform: translateY(-50%)
+            left: 0
+    &__slider
+        position: relative
+        .swiper-container 
+            position: relative
+            .swiper-slide 
+                .item 
+                    .box-img 
+                        display: block 
+                        height: 25rem 
+                        position: relative
+                        overflow: hidden
+                        img 
+                            width: 100%
+                            height: 100%
+                            object-fit: cover 
+                            transition: 2s ease 
+                            transform: scale(1)
+                        .title 
+                            position: absolute 
+                            bottom: 3rem
+                            line-height: 1.4
+                            left: 3rem
+                            font-size: 1.6rem 
+                            color: #ffffff
+                            text-transform: uppercase
+                    &:hover 
+                        .title 
+                            text-decoration: underline
+                        img 
+                            transform: scale(1.15)
+        .swiper-nav
+            position: absolute 
+            top: 50% 
+            transform: translate(-50%,-50%)
+            z-index:
+            left: 50%
+            display: flex 
+            width: calc(100%)
+            z-index: 9
+            .button-next 
+                margin-left: auto
+                transform: translateX(6rem)
+            .button-prev 
+                transform: translateX(-6rem)
+            .button-next,.button-prev 
+                width: 3.5rem 
+                height: 3.5rem 
+                display: flex 
+                justify-content: center 
+                align-items: center 
+                color: $main-color
+                font-size: 3rem
+                outline: none
+                border-radius: 50%
+                border: none
+            @media (max-width: 1024px)
+                .button-next 
+                    margin-left: auto
+                    transform: translateX(0)
+                .button-prev 
+                    transform: translateX(0)
+                            

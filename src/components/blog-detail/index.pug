@@ -1,0 +1,54 @@
+.blog__nav 
+    .container 
+        ul.blog__nav-list
+            li.blog__nav-item
+                a.blog__nav-link demo 
+            li.blog__nav-item
+                a.blog__nav-link demo 
+            li.blog__nav-item
+                a.blog__nav-link demo 
+            li.blog__nav-item
+                a.blog__nav-link demo 
+            li.blog__nav-item
+                a.blog__nav-link demo 
+.blog-detail
+    .container
+        .head 
+            h2.title Once upon a time
+            date 
+                em.mdi.mdi-calendar-today
+                | 01/11/2019
+                
+        .fullcontent 
+            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+            img.img(src="./img/blog-1.png", alt="")
+            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+            .list-image 
+                a.box-img(href="")
+                    img(src="./img/blog-1.png", alt="")
+                a.box-img(href="")
+                    img(src="./img/blog-1.png", alt="")
+                a.box-img(href="")
+                    img(src="./img/blog-1.png", alt="")
+                a.box-img(href="")
+                    img(src="./img/blog-1.png", alt="")
+            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+.blog-other 
+    h2.main-title bài viết khác
+    .blog-other__inner
+        .container 
+            .blog-other__slider
+                .swiper-container 
+                    .swiper-wrapper 
+                        -for(i=1;i<6;i++)
+                            .swiper-slide 
+                                .item 
+                                    a.box-img(href="")
+                                        img(src="./img/h-sv-1.png", alt="")
+                                        h3.title Trang trí tổ chức sự kiện
+                .swiper-nav
+                    .button-prev
+                        em.lnr.lnr-chevron-left
+                    .button-next
+                        em.lnr.lnr-chevron-right
+                        

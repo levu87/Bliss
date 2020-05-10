@@ -1,4 +1,13 @@
-section.home-services.main-section
+section.home-services
     .container 
         h2.main-title Dịch vụ
-        a.main-btn(href="") Xem tất cả
+        .home-services__list
+            -for(i=0;i<6;i++)
+                .home-services__item 
+                    a.box-img(href="")
+                        img(src="./img/h-sv-1.png", alt="")
+                        h3.title Trang trí tổ chức sự kiện
+            
+
+
+        

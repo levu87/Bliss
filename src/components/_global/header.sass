@@ -51,6 +51,10 @@
                 &:nth-child(2)
                     padding-left: 1rem 
                     border-left: 1px solid $main-color
+                    
+                &:hover,&.active 
+                    a 
+                        text-decoration: underline
                 a 
                     font-size: 1.4rem 
                     color: $main-color 
@@ -113,18 +117,26 @@
                 list-style: none 
                 text-align: center
                 li 
-                    padding: 1.6rem 1rem
+                    padding: 1.6rem 3.5rem
                     display: inline-block 
                     position: relative
                     &:after 
                         content: ''
-                        background: $main-color 
-                        width: 110px 
-                        height: 0
                         position: absolute
-                        top: 0 
-                        left: 50%
-                        transform: translateX(-50%)
+                        top: 0
+                        left: 0
+                        width: 100%
+                        height: 100%
+                        z-index: 1
+                        opacity: 0
+                        background-color: $main-color
+                        -webkit-transition: all 0.4s
+                        -moz-transition: all 0.4s
+                        -o-transition: all 0.4s
+                        transition: all 0.4s
+                        -webkit-transform: scale(1, 0.5)
+                        transform: scale(1, 0.5)
+                        pointer-events: none
                     a 
                         position: relative
                         font-size: 1.8rem
@@ -132,14 +144,40 @@
                         text-transform: uppercase
                         font-weight: 500
                         z-index: 99
-                    &:not(:last-child)
-                        margin-right: 4rem
                     &:hover,&.active 
                         &:after 
-                            height: 100%
-                            transition: all .4s
+                            opacity: 1
+                            -webkit-transform: scale(1, 1)
+                            transform: scale(1, 1)
+                            pointer-events: none
                         a
                             color: #ffffff
+                            transition:  .5s ease
+                .has-dropdown 
+                    position: relative
+                    .nav-sub 
+                        position: absolute
+                        left: 0
+                        width: 200%
+                        background: #9bceb9
+                        top: calc(100% - 2rem)
+                        z-index: 999
+                        opacity: 0 
+                        visibility: hidden
+                        li 
+                            padding: 2rem
+                            width: 100%
+                            &:not(:last-child)
+                                border-bottom: 1px solid #ffffff
+                            a 
+                                color: #ffffff
+                    &:hover 
+                        .nav-sub 
+                            opacity: 1 
+                            visibility: visible 
+                            transition: .3s ease-in-out
+                            top: 100%
+
     .mobile-inner-nav
         background-color: #ebf2ef
         width: 100%
@@ -150,6 +188,8 @@
         padding-bottom: 8rem
         display: none
         z-index: 99
+        overflow-x: hidden 
+        overflow-y: auto
         li
             display: inline-block
             line-height: 50px
@@ -182,7 +222,8 @@
                 animation-delay: 0.5s
             a 
                 color: #9cbfb1
-@include respond(tab-port)
+                display: block
+@media (max-width: 1024px)
     .header 
         box-shadow: 0 1px 2px rgba(0,0,0,.1)
         &__top 

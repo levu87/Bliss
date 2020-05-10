@@ -1,0 +1,15 @@
+.video
+    .container 
+        h2.main-title video
+
+        .video__list 
+            -for(i=1;i<13;i++)
+                .video__item 
+                    a(href="./img/blog-1.png" data-fancybox="image")
+                        figure                          
+                            .image
+                                img(src="./img/blog-1.png", alt="video 1")
+                            figcaption
+                                .play-btn 
+                                    em.mdi.mdi-play
+                                .title Video 3

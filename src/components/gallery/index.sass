@@ -1,0 +1,221 @@
+.gallery 
+    margin-bottom: 5rem
+    .tag-line
+        margin-bottom: 4rem
+    .gallery__nav
+        margin-bottom: 3rem
+        position: relative
+        &.is-fixed 
+            position: fixed
+            top: 50px
+            width: 100%
+            background: #ffffff
+            z-index: 99
+            @media (max-width: 1024px)
+                top: 0
+        &.animate-children
+            box-shadow: 0 1px 2px rgba(#000, .2)
+        &-list 
+            list-style: none 
+            padding: 1.5rem 0
+            li 
+                display: inline-block
+                &:not(:last-child)
+                    margin-right: 7rem
+                &:hover,&.active 
+                    a
+                        text-shadow: 0 0 0.65px #9cbfb1, 0 0 0.65px #9cbfb1
+                        text-decoration: underline
+                a 
+                    padding: 1.5rem 0
+                    font-size: 1.5rem 
+                    color: #9cbfb1
+                    text-transform: uppercase
+    &__nav-trigger 
+        display: none 
+    @include respond(tab-port)
+        &__nav-trigger 
+            position: fixed
+            top: 120px
+            left: 1.5rem
+            padding: 2rem 1rem
+            text-transform: uppercase
+            color: #ffffff
+            font-weight: bold
+            background: $main-color
+            z-index: 11
+            display: flex 
+            align-items: center 
+            justify-content: center
+            .icon
+                margin-left: auto
+                position: relative
+                width: 25px
+                height: 2px
+                background: #ffffff
+                display: block 
+                transition: all .3s ease-in-out
+                &:before 
+                    content: ''
+                    position: absolute
+                    width: 25px
+                    height: 2px
+                    background: #ffffff
+                    top: 6px
+                    right: 0
+                    transition: all .3s ease-in-out
+                &:after
+                    content: ''
+                    position: absolute
+                    width: 25px
+                    height: 2px
+                    bottom: 6px
+                    right: 0
+                    background: #ffffff
+                    transition: all .3s ease-in-out
+            &.menu-is-open
+                .icon
+                    &:before
+                        width: 15px
+                        -webkit-transform: translateX(-11px) rotate(45deg)
+                        -ms-transform: translateX(-11px) rotate(45deg)
+                        -o-transform: translateX(-11px) rotate(45deg)
+                        transform: translateX(-11px) rotate(45deg)
+                    &:after
+                        width: 15px
+                        -webkit-transform: translateX(-11px) rotate(-45deg)
+                        -ms-transform: translateX(-11px) rotate(-45deg)
+                        -o-transform: translateX(-11px) rotate(-45deg)
+                        transform: translateX(-11px) rotate(-45deg)
+        
+                    
+        &__nav
+            &-list
+                background: $main-color
+                position: fixed
+                top: 120px
+                left: 1.5rem
+                text-align: center
+                padding: 0
+                border-bottom:  0
+                transform: scale(0)
+                visibility: hidden
+                backface-visibility: hidden
+                transform-origin: top left
+                transition: all 0.3s
+                z-index: 10
+                width: 90%
+                max-width: 400px
+                &.is-visible 
+                    display: block
+                    visibility: visible 
+                    backface-visibility: visible 
+                    transform: scale(1)
+                    padding: 2rem 0
+                    li 
+                        display: block
+                        margin-right: 0!important
+                        &:after 
+                            display: none
+                        a 
+                            color: #ffffff
+                            display: block
+                            &:hover,&.active 
+                                color: #ffffff
+                                text-decoration: underline
+                                &:after 
+                                    display: none
+    .gallery
+        &__content 
+            &:not(:last-child)
+                margin-bottom: 9rem
+            &:nth-child(even)
+                .box-content
+                    &__content 
+                        flex-direction: row-reverse
+                        .title 
+                            align-items: flex-start
+            .box-content 
+                &__content 
+                    display: flex
+                    align-items: center
+                    margin-bottom: 2.5rem
+                    flex-flow: wrap
+                    .img 
+                        height: 37.5rem 
+                        width: 50% 
+                        img 
+                            width: 100%
+                            height: 100%
+                            object-fit: cover
+                    .title 
+                        display: flex
+                        flex-direction: column 
+                        align-items: flex-end
+                        width: 50% 
+                        span 
+                            font-size: 4.8rem
+                            font-weight: 600
+                            color: $main-color 
+                            text-transform: uppercase
+                            display: block
+                            line-height: 1.4
+                        a
+                            font-size: 6rem
+                            font-weight: 600
+                            color: $main-color 
+                            text-transform: uppercase
+                            display: block
+                    @media (max-width: 767px)
+                        .img
+                            width: 100% 
+                        .title 
+                            width: 100%
+                            padding: 3rem 0
+                            span 
+                                font-size: 2.8rem 
+                            a 
+                                font-size: 3.6rem
+                &__inner-slider
+                    .box-img 
+                        height: 24rem 
+                        width: auto 
+                        display: block
+                        img 
+                            width: 100%
+                            height: 100%
+                            object-fit: cover 
+                    .slider 
+                        position: relative
+                        .swiper-nav
+                            position: absolute 
+                            top: 50% 
+                            transform: translate(-50%,-50%)
+                            z-index:
+                            left: 50%
+                            display: flex 
+                            width: calc(100%)
+                            z-index: 9
+                            .button-next 
+                                margin-left: auto
+                                transform: translateX(6rem)
+                            .button-prev 
+                                transform: translateX(-6rem)
+                            .button-next,.button-prev 
+                                width: 3.5rem 
+                                height: 3.5rem 
+                                display: flex 
+                                justify-content: center 
+                                align-items: center 
+                                color: $main-color
+                                font-size: 3rem
+                                outline: none
+                                border-radius: 50%
+                                border: none
+                            @media (max-width: 1024px)
+                                .button-next 
+                                    margin-left: auto
+                                    transform: translateX(0)
+                                .button-prev 
+                                    transform: translateX(0)
+                                

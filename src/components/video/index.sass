@@ -1,0 +1,102 @@
+
+.video
+    padding-bottom: 6rem
+    .main-title 
+        padding-top: 2.5rem
+        margin-bottom: 3.5rem
+    &__list 
+        display: flex 
+        flex-flow: wrap 
+        margin: 0 -3rem 
+    &__item 
+        padding: 0 3rem 
+        margin-bottom: 6rem
+
+        width: 33.33% 
+        @media (max-width: 767px)
+            width: 50%
+        @media (max-width: 575px)
+            width: 100%
+        a 
+            display: block
+            width: 100% 
+        figure 
+            position: relative
+            &:after 
+                content: ''
+                width: 100%
+                height: 100%
+                background: rgba(0,0,0,0.8)
+                position: absolute 
+                top: 0 
+                left: 0
+                display: none
+                opacity: 0
+            .image
+                height: 25rem 
+                width: 100%
+                .box-img 
+                    height: 100%
+                    position: relative
+                    &:after 
+                        content: attr(data-alt)
+                        position: absolute
+                        bottom: 2rem 
+                        left: 2rem
+                        color: #ffffff
+                        font-weight: 400
+                        color: #ffffff
+                        font-size: 1.984rem
+                        pointer-events: none
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover 
+            figcaption 
+                position: absolute 
+                width: 100%
+                height: 100%
+                top: 0 
+                left: 0
+                display: flex 
+                justify-content: center 
+                align-items: center 
+                flex-direction: column
+                z-index: 9
+                .title 
+                    color: #ffffff 
+                    font-size: 1.984rem
+                    transform: scale(0)
+                .play-btn 
+                    width: 6rem 
+                    height: 6rem 
+                    border-radius: 50%
+                    background: #fff 
+                    color: #333333
+                    display: flex 
+                    align-items: center 
+                    justify-content: center
+                    margin-bottom: 2rem
+                    transform: scale(0)
+                    em 
+                        font-size: 3.6rem
+            &:hover 
+                figcaption 
+                    .title 
+                        text-decoration: underline
+                        transform: scale(1)
+                        transition: .7s ease
+                    .play-btn 
+                        transform: scale(1)
+                        transition: .7s ease
+                .image 
+                    .box-img
+                        &:after 
+                            display: none
+                &:after 
+                    display: block!important
+                    opacity: 1 
+                    transition: .5s linear
+
+
+

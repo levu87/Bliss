@@ -134,7 +134,7 @@ a {
 	background-color: transparent;
 }
 
-a:hover {
+/* a:hover {
 	color: #0056b3;
 }
 
@@ -151,7 +151,7 @@ a:not([href]):not([tabindex]):focus {
 
 a:not([href]):not([tabindex]):focus {
 	outline: 0;
-}
+} */
 
 pre,
 code,

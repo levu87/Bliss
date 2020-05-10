@@ -1,0 +1,24 @@
+.services 
+    .container 
+        h2.main-title Dịch vụ 
+        .services__list
+            -for(i=1;i<11;i++)
+                .services__item 
+                    a(href="").box-img
+                        img(src="./img/blog-1.png", alt="")
+.modal#modal
+    .modal-overlay
+    .modal-inner 
+        .close-btn 
+            em.mdi.mdi-close
+        .modal-head
+            h3 dịch vụ
+        .modal-body 
+            .list-item 
+                -for(i=1;i<9;i++)
+                    .item 
+                        .wrapper
+                            a.box-img(href="") 
+                                img(src="./img/blog-1.png", alt="")
+                            .title
+                                a(href="") trang tri
