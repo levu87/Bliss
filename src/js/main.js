@@ -444,7 +444,7 @@ jQuery(document).ready(function($){
 // ////////////gallery navigation end/////////////
 $(document).ready(function() {
     var page = window.location.pathname;
-	if(page == '/' || page == '/default.aspx'){
+	if($('body').hasClass('homepage')){
         $(".header__bottom .menu__list li:nth-child(2)").addClass('services-scroll');
     }else{
 		$(".header__bottom .menu__list li:nth-child(2)").addClass('modal-toggle');

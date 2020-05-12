@@ -17,6 +17,7 @@
 
     <portal:StyleSheetCombiner ID="StyleSheetCombiner" runat="server" IncludejQueryUI="false" JQueryUIThemeName="smoothness" />
     <portal:Favicon ID="Favicon1" runat="server" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <portal:ScriptLoader ID="ScriptLoader1" runat="server" />
     <portal:SkinFolderScript ID="SkinFolderScript1" runat="server" ScriptFileName="js/plugins.min.js" AddToCombinedScript="true" />
     <portal:SkinFolderScript ID="SkinFolderScript2" runat="server" ScriptFileName="js/customize.min.js" AddToCombinedScript="true" />

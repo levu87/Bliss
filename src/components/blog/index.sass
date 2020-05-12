@@ -20,13 +20,19 @@
         background: rgb(156, 191, 177)
     &-list 
         list-style: none 
-        padding: 1.5rem 0
         white-space: nowrap
-        overflow-x: auto
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        // overflow-x: auto
         li 
             display: inline-block
-            &:not(:last-child)
-                margin-right: 7rem
+            padding: 1.5rem 0
+            margin: 0 3.4rem
+            &:first-child
+                margin-left: 0
+            &:last-child
+                margin-right: 0
             &:hover,&.active 
                 a
                     text-shadow: 0 0 0.65px #9cbfb1, 0 0 0.65px #9cbfb1
