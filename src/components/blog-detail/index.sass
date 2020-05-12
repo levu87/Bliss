@@ -59,14 +59,12 @@
             font-size: 1.6rem
             color: #333333 
             line-height: 1.4
-            text-align: center
             padding-bottom: 3.6rem
         .img 
             display: block 
             padding-bottom: 3.6rem
             width: 100%
-            img 
-                width: 100%
+            
         .list-image
             display: grid
             grid-gap: 3rem
@@ -105,6 +103,7 @@
             position: absolute
             transform: translateY(-50%)
             left: 0
+            z-index: -1
     &__slider
         position: relative
         .swiper-container 
@@ -143,7 +142,6 @@
             left: 50%
             display: flex 
             width: calc(100%)
-            z-index: 9
             .button-next 
                 margin-left: auto
                 transform: translateX(6rem)

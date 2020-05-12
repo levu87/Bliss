@@ -67,6 +67,16 @@
                     color: #ffffff 
                     font-size: 1.984rem
                     transform: scale(0)
+                    position: relative
+                    &:after 
+                        content: ''
+                        width: 100%
+                        height: 7px
+                        position: relative
+                        bottom: calc(100% - 12px)
+                        display: block
+                        left: 0
+                        background: #ffffff
                 .play-btn 
                     width: 6rem 
                     height: 6rem 

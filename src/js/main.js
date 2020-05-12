@@ -73,7 +73,7 @@ function Aos(){
 	});
 }
 function swiperInit(){
-	let HomeBanner = new Swiper('.home-banner .swiper-container', {
+	var HomeBanner = new Swiper('.home-banner .swiper-container', {
         speed: 1000,
         navigation: {
             clickable: true,
@@ -86,7 +86,7 @@ function swiperInit(){
         },
 	})
 
-	let ChildBanner = new Swiper('.banner-child .swiper-container', {
+	var ChildBanner = new Swiper('.banner-child .swiper-container', {
         speed: 1000,
         navigation: {
             clickable: true,
@@ -99,18 +99,18 @@ function swiperInit(){
         },
 	})
 
-	let galleryBanner = new Swiper('.gallery .swiper-container', {
-		speed: 1000,
-		centeredSlides: true,
-        navigation: {
-            clickable: true,
-            nextEl: '.gallery .button-next',
-            prevEl: '.gallery .button-prev'
-        },
-	})
+	// var galleryBanner = new Swiper('.gallery .swiper-container', {
+	// 	speed: 1000,
+	// 	centeredSlides: true,
+    //     navigation: {
+    //         clickable: true,
+    //         nextEl: '.gallery .button-next',
+    //         prevEl: '.gallery .button-prev'
+    //     },
+	// })
 
 
-	let OtherBlog = new Swiper('.blog-other .swiper-container', {
+	var OtherBlog = new Swiper('.blog-other .swiper-container', {
 		speed: 1000,
 		slidesPerView: 3,
 		spaceBetween: 50,
@@ -129,7 +129,7 @@ function swiperInit(){
 		}
 	})
 
-	let gallerySlider1 = new Swiper('.gallery__content-1 .swiper-container', {
+	var gallerySlider1 = new Swiper('.gallery__content-1 .swiper-container', {
 		speed: 1000,
 		slidesPerView: 3,
 		spaceBetween: 20,
@@ -147,7 +147,7 @@ function swiperInit(){
 			}
 		}
 	})
-	let gallerySlider2 = new Swiper('.gallery__content-2 .swiper-container', {
+	var gallerySlider2 = new Swiper('.gallery__content-2 .swiper-container', {
 		speed: 1000,
 		slidesPerView: 3,
 		spaceBetween: 20,
@@ -165,7 +165,7 @@ function swiperInit(){
 			}
 		}
 	})
-	let gallerySlider3 = new Swiper('.gallery__content-3 .swiper-container', {
+	var gallerySlider3 = new Swiper('.gallery__content-3 .swiper-container', {
 		speed: 1000,
 		slidesPerView: 3,
 		spaceBetween: 20,
@@ -183,7 +183,7 @@ function swiperInit(){
 			}
 		}
 	})
-	let gallerySlider4 = new Swiper('.gallery__content-4 .swiper-container', {
+	var gallerySlider4 = new Swiper('.gallery__content-4 .swiper-container', {
 		speed: 1000,
 		slidesPerView: 3,
 		spaceBetween: 20,
@@ -201,7 +201,7 @@ function swiperInit(){
 			}
 		}
 	})
-	let gallerySlider5 = new Swiper('.gallery__content-5 .swiper-container', {
+	var gallerySlider5 = new Swiper('.gallery__content-5 .swiper-container', {
 		speed: 1000,
 		slidesPerView: 3,
 		spaceBetween: 20,
@@ -219,7 +219,7 @@ function swiperInit(){
 			}
 		}
 	})
-	let gallerySlider6 = new Swiper('.gallery__content-6 .swiper-container', {
+	var gallerySlider6 = new Swiper('.gallery__content-6 .swiper-container', {
 		speed: 1000,
 		slidesPerView: 3,
 		spaceBetween: 20,
@@ -291,7 +291,6 @@ $(document).ready(function () {
 	// CustomSelect()	
 	backToTop()
 	toggleSearch()
-	modalToggle()
 	
 
 	$(window).on('resize', function () {
@@ -365,16 +364,101 @@ $(document).ready(function () {
 	});
 });
 
-function modalToggle() {
-	$('#services').on('click', function () {
+// //////////gallery navigation start////////
+jQuery(document).ready(function($){
+	var headerHeight = $('.header__bottom').height();
+	var galleryNav = $('.gallery__nav'),
+		galleryNavTopPosition = galleryNav.offset().top,
+		// taglineOffesetTop = $('#intro-tagline').offset().top + $('#intro-tagline').height() + parseInt($('#intro-tagline').css('paddingTop').replace('px', '')),
+		contentSections = $('.section');
+	
+	$(window).on('scroll', function(){
+		//on desktop - assign a position fixed to logo and action button and move them outside the viewport
+		// ( $(window).scrollTop() > taglineOffesetTop ) ? $('#logo, .btn').addClass('is-hidden') : $('#logo, .btn').removeClass('is-hidden');
+		
+		//on desktop - fix gallery navigation on scrolling
+		if($(window).scrollTop() > galleryNavTopPosition ) {
+			//fix gallery navigation
+			galleryNav.addClass('is-fixed');
+			//push the .main-content giving it a top-margin
+			$('.main-content').addClass('has-top-margin');	
+			//on Firefox CSS transition/animation fails when parent element changes position attribute
+			//so we to change gallery navigation childrens attributes after having changed its position value
+			setTimeout(function() {
+	            galleryNav.addClass('animate-children');
+	            $('#logo').addClass('slide-in');
+				$('.btn').addClass('slide-in');
+	        }, 50);
+		} else {
+			galleryNav.removeClass('is-fixed');
+			$('.main-content').removeClass('has-top-margin');
+			setTimeout(function() {
+	            galleryNav.removeClass('animate-children');
+	            $('#logo').removeClass('slide-in');
+				$('.btn').removeClass('slide-in');
+	        }, 50);
+		}
+
+		//on desktop - update the active link in the gallery fixed navigation
+		updategalleryNavigation();
+	});
+
+	function updategalleryNavigation() {
+		contentSections.each(function(){
+			var actual = $(this),
+				actualHeight = actual.height() + parseInt(actual.css('paddingTop').replace('px', '')) + parseInt(actual.css('paddingBottom').replace('px', '')),
+				actualAnchor = galleryNav.find('a[href="#'+actual.attr('id')+'"]');
+			if ( ( actual.offset().top - galleryNav.height() - headerHeight <= $(window).scrollTop() ) && ( actual.offset().top +  actualHeight - galleryNav.height() - headerHeight > $(window).scrollTop() ) ) {
+				actualAnchor.addClass('active');
+			}else {
+				actualAnchor.removeClass('active');
+			}
+		});
+	}
+
+	//on mobile - open/close gallery navigation clicking/tapping the .gallery__nav-trigger
+	$('.gallery__nav-trigger').on('click', function(event){
+		event.preventDefault();
+		$(this).toggleClass('menu-is-open');
+		galleryNav.find('ul').toggleClass('is-visible');
+	});
+
+	//smooth scrolling when clicking on the gallery navigation items
+	galleryNav.find('ul a').on('click', function(event){
+        event.preventDefault();
+        var target= $(this.hash);
+        $('body,html').animate({
+        	'scrollTop': target.offset().top - galleryNav.height() + 1
+        	}, 400
+        ); 
+        //on mobile - close gallery navigation
+        $('.gallery__nav-trigger').removeClass('menu-is-open');
+        galleryNav.find('ul').removeClass('is-visible');
+    });
+
+    //on mobile - open/close primary navigation clicking/tapping the menu icon
+	$('.primary-nav').on('click', function(event){
+		if($(event.target).is('.primary-nav')) $(this).children('ul').toggleClass('is-visible');
+	});
+});
+// ////////////gallery navigation end/////////////
+$(document).ready(function() {
+    var page = window.location.pathname;
+	if(page == '/' || page == '/default.aspx'){
+        $(".header__bottom .menu__list li:nth-child(2)").addClass('services-scroll');
+    }else{
+		$(".header__bottom .menu__list li:nth-child(2)").addClass('modal-toggle');
+	};
+	$('.header__bottom .menu__list li:nth-child(2) a').attr('href','javascript:void(0)');
+	$('.header__bottom .menu__list .modal-toggle').on('click', function () {
 		$('header .mobile-inner-nav').removeClass('active')
-		$('#modal').toggleClass('active')
+		$('.modal-toggle').toggleClass('active')
 		$('.modal-overlay').toggleClass('active')
 		$('.modal').toggleClass('active')
 		$('body').addClass('open-modal')
 	});
 	$('.close-btn').on('click', function () {
-		$('#modal').removeClass('active')
+		$('.modal-toggle').removeClass('active')
 		$('.modal-overlay').removeClass('active')
 		$('.modal').removeClass('active')
 		$('body').removeClass('open-modal')
@@ -384,93 +468,34 @@ function modalToggle() {
 		$('.modal-overlay').removeClass('active')
 		$('body').removeClass('open-modal')
 	});
-}
+	$(".services-scroll").on("click", function() {
+		$("html,body").animate(
+			{
+				scrollTop: $(".home-services").offset().top - 50
+			},
+			1000
+		);
+	});
+});
 
-
-// //////////gallery navigation start////////
-// jQuery(document).ready(function($){
-// 	var headerHeight = $('.header__bottom').height();
-// 	var galleryNav = $('.gallery__nav'),
-// 		galleryNavTopPosition = galleryNav.offset().top,
-// 		// taglineOffesetTop = $('#intro-tagline').offset().top + $('#intro-tagline').height() + parseInt($('#intro-tagline').css('paddingTop').replace('px', '')),
-// 		contentSections = $('.section');
-	
-// 	$(window).on('scroll', function(){
-// 		//on desktop - assign a position fixed to logo and action button and move them outside the viewport
-// 		// ( $(window).scrollTop() > taglineOffesetTop ) ? $('#logo, .btn').addClass('is-hidden') : $('#logo, .btn').removeClass('is-hidden');
-		
-// 		//on desktop - fix gallery navigation on scrolling
-// 		if($(window).scrollTop() > galleryNavTopPosition ) {
-// 			//fix gallery navigation
-// 			galleryNav.addClass('is-fixed');
-// 			//push the .main-content giving it a top-margin
-// 			$('.main-content').addClass('has-top-margin');	
-// 			//on Firefox CSS transition/animation fails when parent element changes position attribute
-// 			//so we to change gallery navigation childrens attributes after having changed its position value
-// 			setTimeout(function() {
-// 	            galleryNav.addClass('animate-children');
-// 	            $('#logo').addClass('slide-in');
-// 				$('.btn').addClass('slide-in');
-// 	        }, 50);
-// 		} else {
-// 			galleryNav.removeClass('is-fixed');
-// 			$('.main-content').removeClass('has-top-margin');
-// 			setTimeout(function() {
-// 	            galleryNav.removeClass('animate-children');
-// 	            $('#logo').removeClass('slide-in');
-// 				$('.btn').removeClass('slide-in');
-// 	        }, 50);
-// 		}
-
-// 		//on desktop - update the active link in the gallery fixed navigation
-// 		updategalleryNavigation();
-// 	});
-
-// 	function updategalleryNavigation() {
-// 		contentSections.each(function(){
-// 			var actual = $(this),
-// 				actualHeight = actual.height() + parseInt(actual.css('paddingTop').replace('px', '')) + parseInt(actual.css('paddingBottom').replace('px', '')),
-// 				actualAnchor = galleryNav.find('a[href="#'+actual.attr('id')+'"]');
-// 			if ( ( actual.offset().top - galleryNav.height() - headerHeight <= $(window).scrollTop() ) && ( actual.offset().top +  actualHeight - galleryNav.height() - headerHeight > $(window).scrollTop() ) ) {
-// 				actualAnchor.addClass('active');
-// 			}else {
-// 				actualAnchor.removeClass('active');
-// 			}
-// 		});
-// 	}
-
-// 	//on mobile - open/close gallery navigation clicking/tapping the .gallery__nav-trigger
-// 	$('.gallery__nav-trigger').on('click', function(event){
-// 		event.preventDefault();
-// 		$(this).toggleClass('menu-is-open');
-// 		galleryNav.find('ul').toggleClass('is-visible');
-// 	});
-
-// 	//smooth scrolling when clicking on the gallery navigation items
-// 	galleryNav.find('ul a').on('click', function(event){
-//         event.preventDefault();
-//         var target= $(this.hash);
-//         $('body,html').animate({
-//         	'scrollTop': target.offset().top - galleryNav.height() + 1
-//         	}, 400
-//         ); 
-//         //on mobile - close gallery navigation
-//         $('.gallery__nav-trigger').removeClass('menu-is-open');
-//         galleryNav.find('ul').removeClass('is-visible');
-//     });
-
-//     //on mobile - open/close primary navigation clicking/tapping the menu icon
-// 	$('.primary-nav').on('click', function(event){
-// 		if($(event.target).is('.primary-nav')) $(this).children('ul').toggleClass('is-visible');
-// 	});
-// });
-// ////////////gallery navigation end/////////////
 $(document).ready(function() {
-    var page = window.location.pathname;
-	if(page == '/' || page == '/default.aspx'){
-        $(".header__bottom .menu__list li:nth-child(3) a").addclass("id","services");
-    }else{
-		$(".header__bottom .menu__list li:nth-child(3) a").attr("id","modal");
-	};
 	$('.header__bottom .menu__list li:nth-child(3) a').attr('href','javascript:void(0)');
+	$('.header__bottom .menu__list li:nth-child(3)').addClass('modal-quote-toggle');
+	$('.header__bottom .menu__list .modal-quote-toggle').on('click', function () {
+		$('header .mobile-inner-nav').removeClass('active')
+		$('.overlay').toggleClass('active')
+		$('.modal-quote').toggleClass('active')
+		$('body').addClass('open-modal')
+	});
+	$('.close-btn').on('click', function () {
+		$('.modal-toggle').removeClass('active')
+		$('.overlay').removeClass('active')
+		$('.modal-quote').removeClass('active')
+		$('body').removeClass('open-modal')
+	});
+	$('.overlay').on('click', function () {
+		$('.modal-quote').removeClass('active')
+		$('.overlay').removeClass('active')
+		$('body').removeClass('open-modal')
+	});
 });
