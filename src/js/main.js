@@ -137,7 +137,7 @@ function swiperInit() {
 	var gallerySlider1 = new Swiper('.gallery__content-1 .swiper-container', {
 		speed: 1000,
 		slidesPerView: 3,
-		spaceBetween: 20,
+		spaceBetween: 30,
 		navigation: {
 			clickable: true,
 			nextEl: '.gallery__content-1 .button-next',
@@ -155,7 +155,7 @@ function swiperInit() {
 	var gallerySlider2 = new Swiper('.gallery__content-2 .swiper-container', {
 		speed: 1000,
 		slidesPerView: 3,
-		spaceBetween: 20,
+		spaceBetween: 30,
 		navigation: {
 			clickable: true,
 			nextEl: '.gallery__content-2 .button-next',
@@ -173,7 +173,7 @@ function swiperInit() {
 	var gallerySlider3 = new Swiper('.gallery__content-3 .swiper-container', {
 		speed: 1000,
 		slidesPerView: 3,
-		spaceBetween: 20,
+		spaceBetween: 30,
 		navigation: {
 			clickable: true,
 			nextEl: '.gallery__content-3 .button-next',
@@ -191,7 +191,7 @@ function swiperInit() {
 	var gallerySlider4 = new Swiper('.gallery__content-4 .swiper-container', {
 		speed: 1000,
 		slidesPerView: 3,
-		spaceBetween: 20,
+		spaceBetween: 30,
 		navigation: {
 			clickable: true,
 			nextEl: '.gallery__content-4 .button-next',
@@ -209,7 +209,7 @@ function swiperInit() {
 	var gallerySlider5 = new Swiper('.gallery__content-5 .swiper-container', {
 		speed: 1000,
 		slidesPerView: 3,
-		spaceBetween: 20,
+		spaceBetween: 30,
 		navigation: {
 			clickable: true,
 			nextEl: '.gallery__content-5 .button-next',
@@ -227,7 +227,7 @@ function swiperInit() {
 	var gallerySlider6 = new Swiper('.gallery__content-6 .swiper-container', {
 		speed: 1000,
 		slidesPerView: 3,
-		spaceBetween: 20,
+		spaceBetween: 30,
 		navigation: {
 			clickable: true,
 			nextEl: '.gallery__content-6 .button-next',

@@ -35,8 +35,8 @@
                                     </div>
                                 </div>
                                 <div class="swiper-nav">
-                                    <div class="button-prev"><em class="lnr lnr-chevron-left"></em></div>
-                                    <div class="button-next"><em class="lnr lnr-chevron-right"></em></div>
+                                    <div class="button-prev"><em class="mdi mdi-chevron-left"></em></div>
+                                    <div class="button-next"><em class="mdi mdi-chevron-right"></em></div>
                                 </div>
                             </div>
                         </div>
@@ -73,8 +73,8 @@
                                     </div>
                                 </div>
                                 <div class="swiper-nav">
-                                    <div class="button-prev"><em class="lnr lnr-chevron-left"></em></div>
-                                    <div class="button-next"><em class="lnr lnr-chevron-right"></em></div>
+                                    <div class="button-prev"><em class="mdi mdi-chevron-left"></em></div>
+                                    <div class="button-next"><em class="mdi mdi-chevron-right"></em></div>
                                 </div>
                             </div>
                         </div>
@@ -111,8 +111,8 @@
                                     </div>
                                 </div>
                                 <div class="swiper-nav">
-                                    <div class="button-prev"><em class="lnr lnr-chevron-left"></em></div>
-                                    <div class="button-next"><em class="lnr lnr-chevron-right"></em></div>
+                                    <div class="button-prev"><em class="mdi mdi-chevron-left"></em></div>
+                                    <div class="button-next"><em class="mdi mdi-chevron-right"></em></div>
                                 </div>
                             </div>
                         </div>
@@ -149,8 +149,8 @@
                                     </div>
                                 </div>
                                 <div class="swiper-nav">
-                                    <div class="button-prev"><em class="lnr lnr-chevron-left"></em></div>
-                                    <div class="button-next"><em class="lnr lnr-chevron-right"></em></div>
+                                    <div class="button-prev"><em class="mdi mdi-chevron-left"></em></div>
+                                    <div class="button-next"><em class="mdi mdi-chevron-right"></em></div>
                                 </div>
                             </div>
                         </div>
@@ -187,8 +187,8 @@
                                     </div>
                                 </div>
                                 <div class="swiper-nav">
-                                    <div class="button-prev"><em class="lnr lnr-chevron-left"></em></div>
-                                    <div class="button-next"><em class="lnr lnr-chevron-right"></em></div>
+                                    <div class="button-prev"><em class="mdi mdi-chevron-left"></em></div>
+                                    <div class="button-next"><em class="mdi mdi-chevron-right"></em></div>
                                 </div>
                             </div>
                         </div>
@@ -225,8 +225,8 @@
                                     </div>
                                 </div>
                                 <div class="swiper-nav">
-                                    <div class="button-prev"><em class="lnr lnr-chevron-left"></em></div>
-                                    <div class="button-next"><em class="lnr lnr-chevron-right"></em></div>
+                                    <div class="button-prev"><em class="mdi mdi-chevron-left"></em></div>
+                                    <div class="button-next"><em class="mdi mdi-chevron-right"></em></div>
                                 </div>
                             </div>
                         </div>

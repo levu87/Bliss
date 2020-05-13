@@ -9,7 +9,7 @@
         <div class="list-items">
             <xsl:apply-templates select="NewsList/News"></xsl:apply-templates>
         </div>
-        <div class="view-all-btn"> <a class="main-btn">Xem tất cả</a></div>
+        
     </xsl:template>
     <xsl:template match="News">
         <!-- <div class="services__item"><a class="box-img"><xsl:attribute name="href"><xsl:value-of select="Url"></xsl:value-of></xsl:attribute><xsl:attribute name="title"><xsl:value-of select="Title"></xsl:value-of></xsl:attribute><img class="lazyload blur-up"><xsl:attribute name="src"><xsl:value-of select="ImageUrl"></xsl:value-of></xsl:attribute><xsl:attribute name="alt"><xsl:value-of select="Title"></xsl:value-of></xsl:attribute></img></a><div class="title"><a><xsl:attribute name="href"><xsl:value-of select="Url"></xsl:value-of></xsl:attribute><xsl:attribute name="title"><xsl:value-of select="Title"></xsl:value-of></xsl:attribute><xsl:attribute name="target"><xsl:value-of select="Target"></xsl:value-of></xsl:attribute><xsl:value-of select="Title" disable-output-escaping="yes"></xsl:value-of></a></div></div> -->
