@@ -42,4 +42,57 @@ button
 
 
 
-
+.homepage
+	.home-blog__item 
+		.caption
+			@media(min-width: 1200px)
+				display: flex
+				flex-direction: column
+				justify-content: space-between
+.footer 
+	.iframe-wrap
+		margin: 0 !important
+		> div 
+			width: 100%
+		.list-iframe-ft
+			display: flex
+			justify-content: space-between
+			@media(max-width: 1025px)
+				iframe
+					width: 400px !important
+			@media(max-width: 768px)
+				
+				iframe
+					width: 300px !important
+			@media(max-width: 576px)
+				flex-wrap: wrap 
+				justify-content: center
+				iframe
+					margin-bottom: 20px
+.about-wrapper 
+	.list-items
+		@media(min-width: 1200px)
+			.item:first-child
+				width: 600px
+			.item:nth-child(2)
+				width: 600px
+			.item:nth-child(3), .item:last-child
+				width: 285px
+.modal .modal-inner .modal-body .list-item .item
+	padding: 0 3rem !important
+.modal .modal-inner .modal-body .list-item
+	margin: 0 -2rem !important
+.modal .modal-inner .modal-body .list-item .item .wrapper .box-img
+	height: 24.7rem !important
+.modal .modal-inner .close-btn
+	right: 2.3rem !important
+.modal .modal-inner .modal-body .list-item .item .wrapper
+	&:hover 
+		.title
+			a 
+				text-decoration: underline
+.blog__item .caption
+	@media(min-width: 1200px)
+		display: flex
+		flex-direction: column
+		justify-content: space-between

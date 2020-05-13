@@ -88,12 +88,7 @@
 		<section class="footer">
 			<div class="container"> 
 				<div class="iframe-wrap"> 
-					<div class="iframe">
-                        <portal:modulewrapper id="mdl143" runat="server" configuremoduleid="143"/>
-                    </div>
-					<div class="iframe">
-                        <portal:modulewrapper id="mdl144" runat="server" configuremoduleid="144"/>
-                    </div>
+                    <portal:modulewrapper id="mdl143" runat="server" configuremoduleid="143"/>
 				</div>
 				<div class="wrapper"> 
 					<div class="info">
